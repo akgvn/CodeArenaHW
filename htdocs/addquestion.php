@@ -1,5 +1,4 @@
 <?php
-
 	session_start();
 
 	if(isset($_SESSION["username"]) != true) {
@@ -13,16 +12,19 @@
 
 <html>
 	<body>
-
 		<form method = "post">
-			<label> Question Title: </label> <br>
-			<input name = "question_title"> </input> <br> 	
-			
-			<label> Question Text: </label> <br>
-			<textarea name = "question_text" cols = "40" rows = "6" > </textarea> <br> 	
-			<label> Answer: </label> <br> 
-			<input name = "answer"  > </input> <br>
-					
+			<label>Question Title:<br>
+			<input required name = "question_title" placeholder="Question Title..."></input> <br> 	
+			</label>
+
+			<label>Question Text:<br>
+			<textarea required name = "question_text" cols = "40" rows = "6" placeholder="Question..."></textarea> <br> 	
+			</label>
+
+			<label>Answer:<br> 
+			<input required name = "answer" placeholder="Answer..."></input> <br>
+			</label>
+
 			<input type="submit" value="Submit" />
 		</form>
 	</body>		
@@ -31,30 +33,21 @@
 <?php
 	require "db_connect.php";
 	
-	echo $_SESSION["username"]; // FIXME this place
+	echo $_SESSION["username"];
 
 	echo "Hey.";
 
 	if (array_key_exists("username", $_SESSION)) {
-		$field_names = array("question_title", "question_text", "answer");
-		$n_fields = 3;
-		$count = 0;
-		for($i = 0; $i < $n_fields; $i++) {
-			$field_name = $field_names[$i];
-			if(array_key_exists($field_name, $_POST) ) {
-				$count++;		
-			}	
-		}
-		if ($count == $n_fields) {
+		if (array_key_exists("question_title", $_POST) && array_key_exists("question_text", $_POST) && array_key_exists("answer", $_POST)) {
 			$username = $_SESSION["username"];	
 			echo $username;	
 			$reviewer_id = $_SESSION["user_id"]; 
 			echo $reviewer_id;	
-			//$query_str	
 			
-			$query_all = $db->query("select username, is_reviewer from users where username =\"" . $username . "\""); //$username from users where  ");
-			//echo $query_all;
+			$query_all = $db->query("select username, is_reviewer from users where username =\"" . $username . "\"");
+
 			$row = $query_all->fetch_assoc();
+
 			if($row["is_reviewer"] == 1){
 				$question_title = "\"" . $_POST["question_title"] . "\"";
 				$question_text = "\"" . $_POST["question_text"] . "\"";
@@ -67,17 +60,12 @@
 					echo "Question added.";
 				} 	
 				else {
-					echo "Sth is wrong.";
+					echo "Problem with db, question wasn't added.";
 				}
 			}
 			else {
 				header("Location: http://localhost/prez");
-			}	
-					
+			}			
 		}
-		//else {
-		//	header("Location: http://localhost");
-		//}	
-
 	}
 ?>	
