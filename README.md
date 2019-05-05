@@ -3,9 +3,9 @@
 We're tasked with creating a "Code Arena" site that people can solve ProjectEuler style problems.
 
 ## TODO:
-[ ] showquestion.php
-[ ] answerquestion.php
-[ ] leaderboard.php
+- [ ] showquestion.php
+- [ ] answerquestion.php
+- [ ] leaderboard.php
 
 ## Grading
 
