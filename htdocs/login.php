@@ -50,8 +50,8 @@
 <html>
 	<body>
 		<form method = "post">
-			<label> Username: </label> <input name = "user"> </input> <br> 	
-			<label> Password: </label> <input name = "pass" type = "password"> </input>
+			<label> Username: </label> <input required name = "user"> </input> <br> 	
+			<label> Password: </label> <input required name = "pass" type = "password"> </input>
 			<br>	
 			<input type="submit" value="Submit" />
 		</form>	
