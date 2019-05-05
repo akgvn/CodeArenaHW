@@ -1,22 +1,14 @@
 <?php
-	//$db = mysqli_connect("localhost", "root", "1357", "code_arena");
-  	//or die ("There was a problem connecting to the db.");
-	//mysql_select_db("code_arena")
-  	//or die("There is a problem with the db.");
-	//echo $_SESSION["username"];
-	
-	//echo $_COOKIE["username"];
-	//echo $_COOKIE["user_id"];
-	//echo 
-	//if(isser(
 
-	if(isset($_COOKIE["username"]) != true) {
+	session_start();
+
+	if(isset($_SESSION["username"]) != true) {
 		header("Location: login.php"); 		
-	} 	
+	}
 	
-	//print_r($_SESSION);
+	print_r($_SESSION);
 
-	echo "Hey.";	
+	echo "Hey.";
 ?>
 
 <html>
@@ -34,28 +26,29 @@
 			<input type="submit" value="Submit" />
 		</form>
 	</body>		
+</html>
 
 <?php
-	$db = mysqli_connect("localhost", "root", "12345678", "code_arena_1");
-  	//or die ("There was a problem connecting to the db.");
-	//mysql_select_db("code_arena")
-  	//or die("There is a problem with the db.");
-	//echo $_SESSION["username"];
-	//echo "Hey.";
-	if (array_key_exists("username", $_COOKIE)) {
+	require "db_connect.php";
+	
+	echo $_SESSION["username"]; // FIXME this place
+
+	echo "Hey.";
+
+	if (array_key_exists("username", $_SESSION)) {
 		$field_names = array("question_title", "question_text", "answer");
 		$n_fields = 3;
 		$count = 0;
 		for($i = 0; $i < $n_fields; $i++) {
 			$field_name = $field_names[$i];
-			if(array_key_exists($field_name, $_POST) ) { //_POST[$field_name])) 			{
+			if(array_key_exists($field_name, $_POST) ) {
 				$count++;		
 			}	
 		}
 		if ($count == $n_fields) {
-			$username = $_COOKIE["username"];//$_SESSION["username"];	
+			$username = $_SESSION["username"];	
 			echo $username;	
-			$reviewer_id = $_COOKIE["user_id"]; 
+			$reviewer_id = $_SESSION["user_id"]; 
 			echo $reviewer_id;	
 			//$query_str	
 			
