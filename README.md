@@ -6,7 +6,7 @@ We're tasked with creating a "Code Arena" site that people can solve ProjectEule
 
 **5 points each:**
 * [ ] General Design – CSS
-* [ ] Login & Register
+* [x] Login & Register
 * [ ] Session Management -> Use of Session Object’s Attributes (e.g. “Welcome, name lastname”)
 
 **7 points each:**
@@ -14,11 +14,13 @@ We're tasked with creating a "Code Arena" site that people can solve ProjectEule
 * [ ] Add Question
 
 **10 points each:**
-* [ ] List all users with a table / gridview
+* [x] List all users with a table / gridview
 * [ ] Select user with Checkbox in all users gridview / table and set the selected user as admin / reviewer
 * [ ] User and Reviewer Pages, Separate user and reviewer pages (Only reviewers can add a question).
 * [ ] Answer Page
 
-**11 points:** [ ] Client-Side Features, Username and password validation. Various Javascript usage.
+**11 points:** 
+* [x] Client-Side Features, Username and password validation. Various Javascript usage.
 
-**20 points:** [ ] Leaderboard sorted by highest score in descending order (Sample leaderboard)
+**20 points:** 
+* [ ] Leaderboard sorted by highest score in descending order (Sample leaderboard)
