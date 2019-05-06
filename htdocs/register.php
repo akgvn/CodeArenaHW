@@ -71,13 +71,12 @@
                 </select>
             </label> <br> <br>
             <label> Favorite IDE? <br>
-                <label for="devcpp"><input type="radio" name="favide" value="devcpp"> Dev-C++</label>
-                <label for="eclipse"><input type="radio" name="favide" value="eclipse"> Eclipse</label>
-                <label for="vim"><input type="radio" name="favide" value="vim"> Vim</label>
-                <label for="visual_studio"><input type="radio" name="favide" value="visual_studio"> Visual Studio</label>
+                <label><input required type="radio" name="favide" value="devcpp"> Dev-C++</label>
+                <label><input type="radio" name="favide" value="eclipse"> Eclipse</label>
+                <label><input type="radio" name="favide" value="vim"> Vim</label>
+                <label><input type="radio" name="favide" value="visual_studio"> Visual Studio</label>
             </label>
         </fieldset>
-
         <input type="submit" value="Submit" />
     </form>
 </body>

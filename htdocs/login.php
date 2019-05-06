@@ -36,6 +36,7 @@
 
 			$_SESSION["user_id"] = $row["id"]; // Gets the id column of the row.
 			$_SESSION["username"] = $username;
+			$_SESSION["reviewer"] = $row["is_reviewer"];
 
 			header('Location: listallusers.php') ;
 		}
