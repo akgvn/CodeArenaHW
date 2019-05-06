@@ -51,7 +51,7 @@
 </script>
 
 <body>
-    <form action="register.php" method="post" onsubmit="return validate();">
+    <form action="register.php" method="post"> <!-- onsubmit="return validate();" -->
         <fieldset>
             <legend>Your Details:</legend>
             <label>e-Mail: <input type="text" id="mail" name="mail" size="30" maxlength="100"></label><br /><br>
@@ -71,10 +71,10 @@
                 </select>
             </label> <br> <br>
             <label> Favorite IDE? <br>
-                <input type="radio" name="favide" value="devcpp"><label for="devcpp"> Dev-C++</label>
-                <input type="radio" name="favide" value="eclipse"><label for="eclipse"> Eclipse</label>
-                <input type="radio" name="favide" value="vim"><label for="vim"> Vim</label>
-                <input type="radio" name="favide" value="visual_studio"><label for="visual_studio"> Visual Studio</label>
+                <label for="devcpp"><input type="radio" name="favide" value="devcpp"> Dev-C++</label>
+                <label for="eclipse"><input type="radio" name="favide" value="eclipse"> Eclipse</label>
+                <label for="vim"><input type="radio" name="favide" value="vim"> Vim</label>
+                <label for="visual_studio"><input type="radio" name="favide" value="visual_studio"> Visual Studio</label>
             </label>
         </fieldset>
 
@@ -92,7 +92,7 @@
 
         require "db_connect.php";
 
-        $query_str = "INSERT INTO users (username, password, email, favourite_ide, favourite_pl) VALUES ('" . $_POST["user"] . "','" . $_POST["pass"] . "','" . $_POST["mail"] . "','" . $_POST["favide"] . "','" . $_POST["proglangs"] . "')";
+        $query_str = "INSERT INTO users (username, password, email, favourite_ide, favourite_pl) VALUES ('" . $_POST["user"] . "','" . $_POST["pass"] . "','" . $_POST["mail"] . "','" . $_POST["favide"] . "','" . $_POST["proglangs"] ."')";
         
         if (mysqli_query($db, $query_str)) {
             echo "Registered new user.";

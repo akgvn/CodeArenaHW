@@ -37,7 +37,7 @@
 			$_SESSION["user_id"] = $row["id"]; // Gets the id column of the row.
 			$_SESSION["username"] = $username;
 
-			header('Location: addquestion.php') ;
+			header('Location: listallusers.php') ;
 		}
 		else {
 			echo "Password or username mismatch.";
