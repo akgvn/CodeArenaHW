@@ -19,5 +19,16 @@
         $row = $query_all->fetch_assoc();
 
         print_r($row); // TODO add question answering etc.
+
+        echo ["question_title"];
+        echo ["question_text"];
     }
 ?>
+
+<form method="post">
+
+    <textarea required name = "answer" cols = "40" rows = "6" placeholder="Your Answer..."></textarea>
+    <br>
+    <input type="submit" value="Submit" />
+
+</form>
