@@ -10,14 +10,14 @@ We're tasked with creating a "Code Arena" site that people can solve ProjectEule
 * [ ] Session Management -> Use of Session Object’s Attributes (e.g. “Welcome, name lastname”)
 
 **7 points each:**
-* [ ] List Questions
-* [ ] Add Question
+* [x] List Questions
+* [x] Add Question
 
 **10 points each:**
 * [x] List all users with a table / gridview
-* [ ] Select user with Checkbox in all users gridview / table and set the selected user as admin / reviewer
-* [ ] User and Reviewer Pages, Separate user and reviewer pages (Only reviewers can add a question).
-* [ ] Answer Page
+* [x] Select user with Checkbox in all users gridview / table and set the selected user as admin / reviewer
+* [x] User and Reviewer Pages, Separate user and reviewer pages (Only reviewers can add a question).
+* [x] Answer Page
 
 **11 points:** 
 * [x] Client-Side Features, Username and password validation. Various Javascript usage.

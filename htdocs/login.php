@@ -55,7 +55,9 @@
 			<label> Password: </label> <input required name = "pass" type = "password"> </input>
 			<br>	
 			<input type="submit" value="Submit" />
-		</form>	
+		</form>
+		<br>
+		<a href="register.php">Register</a>
 	</body>	
 </html>
 
