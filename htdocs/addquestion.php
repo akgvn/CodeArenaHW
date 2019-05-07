@@ -24,7 +24,7 @@
 			<label>Answer:<br> 
 			<input required name = "answer" placeholder="Answer..."></input> <br>
 			</label>
-
+			<br>
 			<input type="submit" value="Submit" />
 		</form>
 	</body>		

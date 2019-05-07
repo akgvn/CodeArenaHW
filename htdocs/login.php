@@ -2,7 +2,7 @@
 	session_start();
 
 	if (isset($_SESSION["username"])) {
-		echo $_SESSION["username"];
+		header("Location: listallusers.php");
 	}
 
 	if (array_key_exists("user", $_POST) && array_key_exists("pass", $_POST)) {

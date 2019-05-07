@@ -6,6 +6,10 @@
 	session_start();
 	
 	require "db_connect.php";
+
+	if (!isset($_SESSION["user_id"])) {
+		header("Location: login.php");
+	}
 	
 	$query_all = $db->query("select id, username, email, favourite_ide, favourite_pl, is_reviewer from users");
  
@@ -51,6 +55,14 @@
 <input type="submit" value="Submit" <?php echo $_SESSION["reviewer"] ? " " : "disabled"; ?> />
 </form>
 
+<br> <br>
+
+<form method="get">
+	<input type="hidden" name="signout" value="1" />
+	<input type="submit" value="Sign out" />
+</form>
+
+
 <?php
 
 	if(($_POST["sent"])) { // Form is submitted
@@ -69,12 +81,15 @@
 				$qu = $db->query("update users set is_reviewer='1' where id='$cid'");
 			} else {
 				$qu = $db->query("update users set is_reviewer='0' where id='$cid'");
+
+				if($_SESSION["user_id"] == $cid) {
+					$_SESSION["reviewer"] = '0';
+				}
 			}
 		}
 
-		header("Location: listallusers.php");
+		header("Refresh:0");
 	}
-
-	// FIXME If a reviewer takes away their own rights, they have to logout before they're gone.
 	
+	require "signout.php";
 ?>
