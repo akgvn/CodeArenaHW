@@ -94,7 +94,6 @@
         $query_str = "INSERT INTO users (username, password, email, favourite_ide, favourite_pl) VALUES ('" . $_POST["user"] . "','" . $_POST["pass"] . "','" . $_POST["mail"] . "','" . $_POST["favide"] . "','" . $_POST["proglangs"] ."')";
         
         if (mysqli_query($db, $query_str)) {
-            echo "Registered new user.";
             header( 'Location: login.php' );
         } else {
             echo "Error: " . $sql . "<br>" . mysqli_error($db);

@@ -1,3 +1,5 @@
+<html>
+<body>
 
 <form method="post">
 
@@ -55,7 +57,19 @@
 <input type="submit" value="Submit" <?php echo $_SESSION["reviewer"] ? " " : "disabled"; ?> />
 </form>
 
-<br> <br>
+<br> 
+
+<a href="showquestion.php">List of Questions</a>
+
+<?php
+
+if($_SESSION["reviewer"]){
+	echo "<a href=\"addquestion.php\">Add Question</a>";
+}
+
+?>
+
+<br>
 
 <form method="get">
 	<input type="hidden" name="signout" value="1" />
@@ -93,3 +107,6 @@
 	
 	require "signout.php";
 ?>
+
+</body>
+</html>
