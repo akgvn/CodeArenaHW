@@ -1,7 +1,21 @@
 <html>
-<body>
 
-<a href="leaderboard.php">Leaderboard</a>
+<head>
+<link href="https://getbootstrap.com/docs/4.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<style>
+body {
+    width: 30%;
+    padding: 50px;
+    align-items: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: #f5f5f5;
+}
+</style>
+
+<body>
 
 <form method="post">
 
@@ -15,9 +29,15 @@ if (!isset($_SESSION["user_id"])) {
     header("Location: login.php");
 }
 
+$un = $_SESSION["username"];
+
+echo "<strong> Welcome, $un! </strong> <br>";
+
+echo "<a href=\"leaderboard.php\">Leaderboard</a> <br>";
+
 $query_all = $db->query("select id, username, email, favourite_ide, favourite_pl, is_reviewer from users");
 
-echo "<table border = 1> "; //style='border:1px'>";
+echo "<table border = 1 class=\"table table-striped\"> ";
 echo "	<tr>";
 echo "		<th> Username </th>";
 echo "      <th> eMail </th>";
@@ -56,26 +76,33 @@ while ($row = $query_all->fetch_assoc()) {
 echo "</table>";
 ?>
 <input type="hidden" name="sent" value="1" />
-<input type="submit" value="Submit" <?php echo $_SESSION["reviewer"] ? " " : "disabled"; ?> />
+<input class="btn btn-lg btn-primary btn-block" type="submit" value="Submit" <?php echo $_SESSION["reviewer"] ? " " : "disabled"; ?> />
 </form>
 
 <br>
 
-<a href="showquestion.php">List of Questions</a>
+<div class="card">
+  <div class="card-body">
+    <a href="showquestion.php">List of Questions</a>
+    <br>
+    <?php
 
-<br>
+    if ($_SESSION["reviewer"]) {
+        echo "<a href=\"addquestion.php\">Add Question</a>";
+    }
 
-<?php
+    ?>
+  </div>
+</div>
 
-if ($_SESSION["reviewer"]) {
-    echo "<a href=\"addquestion.php\">Add Question</a>";
-}
 
-?>
+
+
+
 
 <form method="get">
 	<input type="hidden" name="signout" value="1" />
-	<input type="submit" value="Sign out" />
+	<input class="btn btn-lg btn-primary btn-block" type="submit" value="Sign out" />
 </form>
 
 

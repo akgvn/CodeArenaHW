@@ -1,3 +1,5 @@
+<html>
+
 <?php
 	session_start();
 
@@ -46,18 +48,23 @@
 	}		
 	
 ?>
-	
 
-<html>
-	<body>
-		<form method = "post">
-			<label> Username: </label> <input required name = "user"> </input> <br> 	
-			<label> Password: </label> <input required name = "pass" type = "password"> </input>
+<head>
+<link href="https://getbootstrap.com/docs/4.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://getbootstrap.com/docs/4.3/examples/sign-in/signin.css" rel="stylesheet">
+</head>
+
+	<body class="text-center">
+		<form method = "post" class="form-signin">
+			<h1 class="h3 mb-3 font-weight-normal">Sign in to Code Arena</h1>
+			<label> Username: </label> <input required class="form-control" name = "user"> </input> <br> 	
+			<label> Password: </label> <input required class="form-control" name = "pass" type = "password"> </input>
 			<br>	
-			<input type="submit" value="Submit" />
-		</form>
-		<br>
+			<input class="btn btn-lg btn-primary btn-block" type="submit" value="Submit" />
+			<br>
 		<a href="register.php">Register</a>
+		</form>
+		
 	</body>	
 </html>
 

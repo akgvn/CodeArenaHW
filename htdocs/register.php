@@ -5,7 +5,12 @@
     <meta charset="utf-8">
     </meta>
     <title>Register to Çankaya Code Arena</title>
+
+    <link href="https://getbootstrap.com/docs/4.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/4.3/examples/sign-in/signin.css" rel="stylesheet">
+
 </head>
+
 <script language="javascript">
     function validate() {
         var str_pass = document.getElementById("pass").value;
@@ -50,20 +55,20 @@
     }
 </script>
 
-<body>
-    <form action="register.php" method="post"> <!-- onsubmit="return validate();" -->
+<body class="text-center">
+    <form action="register.php" method="post" class="form-signin">
         <fieldset>
             <legend>Your Details:</legend>
-            <label>e-Mail: <input type="text" id="mail" name="mail" size="30" maxlength="100"></label><br /><br>
-            <label>Username: <input type="text" id="user" name="user" size="30" maxlength="100"></label><br /><br>
-            <label>Password:&nbsp&nbsp<input type="password" id="pass" name="pass" size="30"
+            <label>e-Mail: <input class="form-control" required type="text" id="mail" name="mail" size="30" maxlength="100"></label><br /><br>
+            <label>Username: <input class="form-control" required type="text" id="user" name="user" size="30" maxlength="100"></label><br /><br>
+            <label>Password:&nbsp&nbsp<input class="form-control" required type="password" id="pass" name="pass" size="30"
                     maxlength="100"></label><br />
         </fieldset><br />
         <fieldset>
             <legend>Additional Information:</legend>
             <label> Your favorite programming language?
                 <select name="proglangs">
-                    <option value="cpp">C++</option>
+                    <option required value="cpp">C++</option>
                     <option value="java">Java</option>
                     <option value="cs">C#</option>
                     <option value="python">Python</option>
@@ -71,13 +76,13 @@
                 </select>
             </label> <br> <br>
             <label> Favorite IDE? <br>
-                <label><input required type="radio" name="favide" value="devcpp"> Dev-C++</label>
-                <label><input type="radio" name="favide" value="eclipse"> Eclipse</label>
-                <label><input type="radio" name="favide" value="vim"> Vim</label>
-                <label><input type="radio" name="favide" value="visual_studio"> Visual Studio</label>
+                <div class="form-check form-check-inline"> <label><input class="form-check-input" required type="radio" name="favide" value="devcpp"> Dev-C++</label> </div>
+                <div class="form-check form-check-inline"> <label><input class="form-check-input" type="radio" name="favide" value="eclipse"> Eclipse</label> </div>
+                <div class="form-check form-check-inline"> <label><input class="form-check-input" type="radio" name="favide" value="vim"> Vim</label> </div>
+                <div class="form-check form-check-inline"> <label><input class="form-check-input" type="radio" name="favide" value="visual_studio"> Visual Studio</label> </div>
             </label>
         </fieldset>
-        <input type="submit" value="Submit" />
+        <input class="btn btn-sm btn-primary btn-block" type="submit" value="Submit" />
     </form>
 </body>
 

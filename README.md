@@ -7,7 +7,7 @@ We're tasked with creating a "Code Arena" site that people can solve ProjectEule
 **5 points each:**
 * [ ] General Design – CSS
 * [x] Login & Register
-* [ ] Session Management -> Use of Session Object’s Attributes (e.g. “Welcome, name lastname”)
+* [x] Session Management -> Use of Session Object’s Attributes (e.g. “Welcome, name lastname”)
 
 **7 points each:**
 * [x] List Questions

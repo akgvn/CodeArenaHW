@@ -1,4 +1,9 @@
 <html>
+
+<head>
+<link href="https://getbootstrap.com/docs/4.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
 <body>
 
 <a href="listallusers.php">Back to All Users</a>
@@ -15,7 +20,7 @@ if (!isset($_SESSION["user_id"])) {
 
 $query_all = $db->query("select id, username, email, favourite_ide, favourite_pl, solved_count from users order by solved_count desc");
 
-echo "<table border = 1> "; //style='border:1px'>";
+echo "<table border = 1 class=\"table table-striped\"> ";
 echo "	<tr>";
 echo "		<th> Username </th>";
 echo "      <th> eMail </th>";
