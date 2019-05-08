@@ -1,6 +1,8 @@
 <html>
 <body>
 
+<a href="leaderboard.php">Leaderboard</a>
+
 <form method="post">
 
 <?php
@@ -72,7 +74,7 @@ if ($_SESSION["reviewer"]) {
 ?>
 
 <form method="get">
-	<input type="hidden" name=""signout" value="1" />
+	<input type="hidden" name="signout" value="1" />
 	<input type="submit" value="Sign out" />
 </form>
 

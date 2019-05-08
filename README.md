@@ -23,4 +23,4 @@ We're tasked with creating a "Code Arena" site that people can solve ProjectEule
 * [x] Client-Side Features, Username and password validation. Various Javascript usage.
 
 **20 points:** 
-* [ ] Leaderboard sorted by highest score in descending order (Sample leaderboard)
+* [x] Leaderboard sorted by highest score in descending order (Sample leaderboard)

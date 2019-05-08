@@ -2,7 +2,6 @@
 <body>
 
 <?php
-// TODO not done
 
 session_start();
 
@@ -47,7 +46,7 @@ if (!isset($_GET["id"])) {
     echo "<a href='showquestion.php'>Return to All Questions List</a><br>";
 
     if($solvedbefore) {
-        echo "<br> <strong> You solved this question before! </strong> <br>";
+        echo "<br> <strong> You answered this question correctly! </strong> <br>";
     }
 
     $query_all = $db->query("select question_title, question_text, question_answer from questions where question_id =\"" . $_GET["id"] . "\"");
@@ -71,13 +70,14 @@ if (!isset($_GET["id"])) {
 <?php
 
 if (isset($_POST["answer"])) {
-    if($_POST["answer"] == $row["question_answer"]) {
+    if(trim($_POST["answer"]) == trim($row["question_answer"])) {
         $db->query("insert into solved_by set question_id='" . $_GET["id"] . "', user_id='" . $_SESSION["user_id"] . "'");
         $solved = $db->query("select solved_count from users where id='" . $_SESSION["user_id"] . "'");
         $solved = $solved->fetch_assoc();
         $solved = $solved["solved_count"];
         $solved += 1;
         $db->query("update users set solved_count='" . $solved . "' where id='" . $_SESSION["user_id"] . "'");
+        header("Refresh:0");
    }
 }
 
