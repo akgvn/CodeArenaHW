@@ -70,7 +70,7 @@ if (array_key_exists("username", $_SESSION)) {
 			$query_result = $db->query($query_str); 
 			
             if ($query_result == true) {
-                echo "Question added.";
+                header("Location: showquestion.php");
             } else {
                 echo "Problem with db, question wasn't added.";
             }

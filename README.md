@@ -5,7 +5,8 @@ We're tasked with creating a "Code Arena" site that people can solve ProjectEule
 ## TODO & Grading
 
 **5 points each:**
-* [ ] General Design – CSS
+* [x] General Design / CSS
+  * Not a good design and some pages are still not styled, but it should suffice. 
 * [x] Login & Register
 * [x] Session Management -> Use of Session Object’s Attributes (e.g. “Welcome, name lastname”)
 
