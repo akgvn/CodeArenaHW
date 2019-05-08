@@ -20,7 +20,7 @@ if (!isset($_SESSION["user_id"])) {
 
 $query_all = $db->query("select id, username, email, favourite_ide, favourite_pl, solved_count from users order by solved_count desc");
 
-echo "<table border = 1 class=\"table table-striped\"> ";
+echo "<table class=\"table table-striped\"> ";
 echo "	<tr>";
 echo "		<th> Username </th>";
 echo "      <th> eMail </th>";

@@ -37,7 +37,7 @@ echo "<a href=\"leaderboard.php\">Leaderboard</a> <br>";
 
 $query_all = $db->query("select id, username, email, favourite_ide, favourite_pl, is_reviewer from users");
 
-echo "<table border = 1 class=\"table table-striped\"> ";
+echo "<table class=\"table table-striped\"> ";
 echo "	<tr>";
 echo "		<th> Username </th>";
 echo "      <th> eMail </th>";
