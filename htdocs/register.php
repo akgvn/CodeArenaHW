@@ -56,7 +56,7 @@
 </script>
 
 <body class="text-center">
-    <form action="register.php" method="post" class="form-signin">
+    <form action="register.php" method="post" class="form-signin" onsubmit="return validate();">
         <fieldset>
             <legend>Your Details:</legend>
             <label>e-Mail: <input class="form-control" required type="text" id="mail" name="mail" size="30" maxlength="100"></label><br /><br>
